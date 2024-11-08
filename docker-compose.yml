@@ -7,6 +7,7 @@ services:
       - "127.0.0.1:18778:8001"
     volumes:
       - ./config:/config
+      - ./stellar_data:/stellar_data
     command: >
       --config-path=/config/soroban-rpc-config.toml
       --captive-core-config-path=/config/stellar-core.cfg

@@ -8,7 +8,7 @@ ADMIN_ENDPOINT = "0.0.0.0:8001"
 # CAPTIVE_CORE_CONFIG_PATH = ""
 
 # Storage location for Captive Core bucket data
-CAPTIVE_CORE_STORAGE_PATH = "/"
+CAPTIVE_CORE_STORAGE_PATH = "/stellar_data"
 
 # establishes how many ledgers exist between checkpoints, do NOT change this
 # unless you really know what you are doing
@@ -18,7 +18,7 @@ CHECKPOINT_FREQUENCY = 64
 CLASSIC_FEE_STATS_RETENTION_WINDOW = 10
 
 # SQLite DB path
-DB_PATH = "soroban_rpc.sqlite"
+DB_PATH = "/stellar_data/soroban_rpc.sqlite"
 
 # Default cap on the amount of events included in a single getEvents response
 DEFAULT_EVENTS_LIMIT = 100
