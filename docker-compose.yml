@@ -14,11 +14,7 @@ services:
     restart: unless-stopped
     networks:
       - soroban-rpc-net
-    stop_grace_period: 10s
-    depends_on:
-      health-check:
-        condition: service_stopped
-        timeout: 10s
+    stop_grace_period: 30s
 
   health-check:
     build:
@@ -33,7 +29,9 @@ services:
     restart: unless-stopped
     networks:
       - soroban-rpc-net
-    stop_grace_period: 5s
+    depends_on:
+      soroban-rpc:
+        condition: service_started
 
 networks:
   soroban-rpc-net:
