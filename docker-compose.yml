@@ -1,0 +1,33 @@
+services:
+  soroban-rpc:
+    image: stellar/soroban-rpc
+    ports:
+      - "127.0.0.1:18777:8000"
+      # - "100.64.3.1:18777:8000"
+      - "127.0.0.1:18778:8001"
+    volumes:
+      - ./config:/config
+    command: >
+      --config-path=/config/soroban-rpc-config.toml
+      --captive-core-config-path=/config/stellar-core.cfg
+      --network-passphrase="Public Global Stellar Network ; September 2015"
+    restart: unless-stopped
+    networks:
+      - soroban-rpc-net
+  health-check:
+    build:
+      context: ./health_check
+      dockerfile: Dockerfile
+    command: uvicorn main:app --host 0.0.0.0 --port 9000 --workers 2
+    ports:
+      - "127.0.0.1:18779:9000"
+      # - "100.64.3.1:18779:9000"
+    environment:
+      - SOROBAN_RPC_URL=http://soroban-rpc:8000
+    restart: unless-stopped
+    networks:
+      - soroban-rpc-net
+
+networks:
+  soroban-rpc-net:
+    driver: bridge
