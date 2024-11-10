@@ -138,7 +138,7 @@ NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
 
 # Enable debug information in preflighting (provides more detailed errors). It
 # should not be enabled in production deployments.
-PREFLIGHT_ENABLE_DEBUG = true
+PREFLIGHT_ENABLE_DEBUG = false
 
 # Number of workers (read goroutines) used to compute preflights for the
 # simulateTransaction endpoint. Defaults to the number of CPUs.
