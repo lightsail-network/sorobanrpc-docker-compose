@@ -33,7 +33,7 @@ ENDPOINT = "0.0.0.0:8000"
 # (Deprecated, overidden by history-retention-window) configures the event
 # retention window expressed in number of ledgers, the default value is 17280
 # which corresponds to about 24 hours of history
-EVENT_RETENTION_WINDOW = 120960
+EVENT_RETENTION_WINDOW = 51840
 
 # The friendbot URL to be returned by getNetwork endpoint
 # FRIENDBOT_URL = ""
@@ -49,7 +49,7 @@ HISTORY_ARCHIVE_URLS = [
 # configures history retention window for transactions and events, expressed in
 # number of ledgers, the default value is 17280 which corresponds to about 24
 # hours of history
-HISTORY_RETENTION_WINDOW = 120960
+HISTORY_RETENTION_WINDOW = 51840
 
 # Ingestion Timeout when bootstrapping data (checkpoint and in-memory
 # initialization) and preparing ledger reads
@@ -212,4 +212,4 @@ STELLAR_CORE_TIMEOUT = "5s"
 # (Deprecated, overidden by history-retention-window) configures the transaction
 # retention window expressed in number of ledgers, the default value is 17280
 # which corresponds to about 24 hours of history
-TRANSACTION_RETENTION_WINDOW = 120960
+TRANSACTION_RETENTION_WINDOW = 51840
