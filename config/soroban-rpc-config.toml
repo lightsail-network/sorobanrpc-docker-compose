@@ -59,7 +59,7 @@ INGESTION_TIMEOUT = "50m0s"
 # LOG_FORMAT = "text"
 
 # minimum log severity (debug, info, warn, error) to log
-LOG_LEVEL = "info"
+LOG_LEVEL = "warn"
 
 # Maximum amount of events allowed in a single getEvents response
 MAX_EVENTS_LIMIT = 10000
