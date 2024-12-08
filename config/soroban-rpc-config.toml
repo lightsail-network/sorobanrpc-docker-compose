@@ -41,9 +41,9 @@ EVENT_RETENTION_WINDOW = 51840
 # comma-separated list of stellar history archives to connect with
 HISTORY_ARCHIVE_URLS = [
     "https://history.stellar.org/prd/core-live/core_live_001",
-    "https://stellar-history-de-fra.satoshipay.io",
-    "https://core-live-a-history.lightsail.network",
     "https://stellar-full-history1.bdnodes.net",
+    "https://finland.stellar.whalestack.com/history",
+    "https://core-live-a-history.lightsail.network",
 ]
 
 # configures history retention window for transactions and events, expressed in
