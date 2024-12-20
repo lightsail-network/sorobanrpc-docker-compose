@@ -1,0 +1,32 @@
+https://mainnet.sorobanrpc.com {
+	log {
+		output file /var/log/caddy/mainnet.sorobanrpc.com.log {
+			roll_size 10mb
+			roll_keep 10
+			roll_keep_for 24h
+		}
+		level ERROR
+	}
+
+	reverse_proxy {
+		to 127.0.0.1:18777 100.64.3.2:18777 100.64.3.3:18777 # 127.0.0.1:18777 is the local node, 100.64.3.2 and 100.64.3.3 are the private network IPs of other nodes
+
+		health_uri /health
+		health_port 18779
+		health_interval 1s
+		health_passes 3
+		health_fails 1
+		health_timeout 3s
+		health_status 200
+
+		header_down -Vary
+	}
+
+	header {
+		Access-Control-Allow-Origin "*"
+		Access-Control-Allow-Headers "*"
+		Access-Control-Allow-Methods "GET, PUT, POST, PATCH, DELETE, HEAD, OPTIONS"
+		Access-Control-Max-Age: 86400
+		Vary: Origin
+	}
+}
